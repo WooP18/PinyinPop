@@ -2,7 +2,12 @@
 
 ## A Chinese Pop-Up Dictionary for Chrome and Firefox
 
+**Made by [WooP18](https://github.com/WooP18)**
+
+<a href='https://ko-fi.com/B8O521GOSZ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 Hover over any Chinese characters to instantly see pinyin, tone colors, and English definitions — without leaving the page.
+
 
 ---
 
