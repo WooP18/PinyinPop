@@ -84,9 +84,9 @@ Right-click the PinyinPop icon → **Options** to configure:
 - Skritter region
 
 
-## Based On
+## Acknowledgments
 
-PinyinPop is a fork of [Zhongwen](https://github.com/cschiller/zhongwen) by Christian Schiller, which itself builds on work by Todd Rudick, Jonathan Zarate, and Erek Speed. See [CREDITS.md](CREDITS.md) for full attribution.
+PinyinPop is a refresh of [Zhongwen](https://github.com/cschiller/zhongwen) by Christian Schiller — same powerful dictionary engine, rebuilt with a cleaner UI. Zhongwen itself builds on work by Todd Rudick, Jonathan Zarate, and Erek Speed. See [CREDITS.md](CREDITS.md) for full attribution.
 
 
 ## Legal
