@@ -102,6 +102,45 @@ function applyStorageItems(items) {
     if (items.toneColorScheme !== undefined) zhongwenOptions.toneColorScheme = items.toneColorScheme;
 }
 
+async function updateActionIcon(active) {
+    const size = 48;
+    const canvas = new OffscreenCanvas(size, size);
+    const ctx = canvas.getContext('2d');
+
+    const blob = await fetch(chrome.runtime.getURL('images/zhongwen48.png')).then(r => r.blob());
+    const bitmap = await createImageBitmap(blob);
+    ctx.drawImage(bitmap, 0, 0, size, size);
+
+    if (active) {
+        const bw = 14, bh = 7, r = 2;
+        const bx = size - bw - 1, by = size - bh - 1;
+
+        ctx.beginPath();
+        ctx.moveTo(bx + r, by);
+        ctx.lineTo(bx + bw - r, by);
+        ctx.quadraticCurveTo(bx + bw, by, bx + bw, by + r);
+        ctx.lineTo(bx + bw, by + bh - r);
+        ctx.quadraticCurveTo(bx + bw, by + bh, bx + bw - r, by + bh);
+        ctx.lineTo(bx + r, by + bh);
+        ctx.quadraticCurveTo(bx, by + bh, bx, by + bh - r);
+        ctx.lineTo(bx, by + r);
+        ctx.quadraticCurveTo(bx, by, bx + r, by);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(128, 0, 200, 0.85)';
+        ctx.fill();
+
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 6px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('on', bx + bw / 2, by + bh / 2 + 0.5);
+    }
+
+    const imageData = ctx.getImageData(0, 0, size, size);
+    chrome.action.setIcon({ imageData: { 48: imageData } });
+    chrome.action.setBadgeText({ text: '' });
+}
+
 // Enable by default on first install
 chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason === 'install') {
@@ -117,8 +156,7 @@ chrome.storage.local.get(
         applyStorageItems(items);
 
         if (isEnabled) {
-            chrome.action.setBadgeBackgroundColor({ color: [128, 0, 200, 180] });
-            chrome.action.setBadgeText({ text: 'on' });
+            updateActionIcon(true);
             chrome.contextMenus.removeAll(() => {
                 chrome.contextMenus.create({ id: 'wordlist', title: 'Open word list' });
                 chrome.contextMenus.create({ id: 'help', title: 'Show help in new tab' });
@@ -181,8 +219,7 @@ function activateExtension(tabId, showHelp) {
         });
     }
 
-    chrome.action.setBadgeBackgroundColor({ color: [128, 0, 200, 180] });
-    chrome.action.setBadgeText({ text: 'on' });
+    updateActionIcon(true);
 
     chrome.contextMenus.removeAll(() => {
         chrome.contextMenus.create({ id: 'wordlist', title: 'Open word list' });
@@ -235,8 +272,7 @@ function deactivateExtension() {
     dict = undefined;
     dictReady = null;
 
-    chrome.action.setBadgeBackgroundColor({ color: [0, 0, 0, 0] });
-    chrome.action.setBadgeText({ text: '' });
+    updateActionIcon(false);
 
     chrome.windows.getAll(
         { 'populate': true },
