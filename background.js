@@ -112,7 +112,7 @@ async function updateActionIcon(active) {
     ctx.drawImage(bitmap, 0, 0, size, size);
 
     if (active) {
-        const bw = 26, bh = 12, r = 2;
+        const bw = 39, bh = 18, r = 3;
         const bx = size - bw - 1, by = size - bh - 1;
 
         ctx.beginPath();
@@ -130,7 +130,7 @@ async function updateActionIcon(active) {
         ctx.fill();
 
         ctx.fillStyle = 'white';
-        ctx.font = 'bold 11px Arial';
+        ctx.font = 'bold 17px Arial';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('on', bx + bw / 2, by + bh / 2 + 0.5);
