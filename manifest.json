@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "PinyinPop: Instant Chinese Lookup",
+  "short_name": "PinyinPop",
+  "version": "1.0.0",
+  "author": "Rémi Gérard",
+  "homepage_url": "https://github.com/cschiller/zhongwen",
+  "description": "Hover over any Chinese character for instant pinyin, tone colors, and definitions. Save words, open Grammar Wiki, and export to Skritter — all without leaving the page.",
+  "icons": {
+    "16": "images/zhongwen16.png",
+    "48": "images/zhongwen48.png",
+    "128": "images/zhongwen.png"
+  },
+  "action": {
+    "default_icon": "images/zhongwen48.png",
+    "default_title": "PinyinPop — Click to enable"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/zhuyin.js",
+        "content.js"
+      ],
+      "css": [
+        "css/content.css"
+      ],
+      "all_frames": true
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "storage"
+  ],
+  "commands": {
+    "_execute_action": {
+      "description": "Enable/Disable PinyinPop"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pinyinpop@personal.com",
+      "strict_min_version": "121.0"
+    }
+  }
+}

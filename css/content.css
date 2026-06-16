@@ -1,0 +1,279 @@
+/* Reset all elements inside popup */
+#zhongwen-window, #zhongwen-window * {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+  letter-spacing: normal;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: none;
+  white-space: normal;
+  word-spacing: normal;
+  font-weight: normal;
+  font-size: 13px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  visibility: visible;
+  line-height: 1.4;
+  color: #1c1c1e;
+  box-sizing: border-box;
+}
+
+/* Main popup window — frosted glass context menu style */
+#zhongwen-window {
+  position: absolute;
+  z-index: 999999999;
+  background: rgba(245, 245, 247, 0.55);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+  min-width: 240px;
+  max-height: 80vh;
+  top: 5px;
+  left: 5px;
+  overflow-y: auto;
+  animation: zwPopupFadeIn 120ms ease-out;
+}
+
+@keyframes zwPopupFadeIn {
+  from { opacity: 0; transform: scale(0.97) translateY(-2px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Fallback when backdrop-filter unsupported */
+@supports not (backdrop-filter: blur(1px)) {
+  #zhongwen-window {
+    background: rgba(245, 245, 247, 0.88);
+  }
+}
+
+/* Header row: hanzi + pinyin side by side */
+#zhongwen-window .zw-header-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 14px;
+  flex-wrap: wrap;
+}
+
+/* Thin separator line */
+#zhongwen-window .zw-sep {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 4px 0;
+  width: 100%;
+}
+
+/* Heavier separator between dictionary entries */
+#zhongwen-window .zw-entry-sep {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  margin: 4px 0;
+  width: 100%;
+}
+
+/* Definition row */
+#zhongwen-window .zw-def-row {
+  display: block;
+  padding: 5px 14px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Meta row: grammar/vocab hints, ellipsis */
+#zhongwen-window .zw-meta-row {
+  display: block;
+  padding: 5px 14px;
+  color: #6e6e73;
+  font-size: 11px;
+}
+
+/* Pinyin group wrapper inside header */
+#zhongwen-window .zw-pinyin-group {
+  font-size: 14px;
+}
+
+/* Traditional variant shown alongside simplified */
+#zhongwen-window .zw-trad {
+  margin-left: 4px;
+  opacity: 0.65;
+}
+
+/* Hanzi characters */
+#zhongwen-window .w-hanzi {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#zhongwen-window .w-hanzi-small {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Pinyin */
+#zhongwen-window .w-pinyin {
+  font-size: 14px;
+}
+
+#zhongwen-window .w-pinyin-small {
+  font-size: 12px;
+}
+
+/* Definitions */
+#zhongwen-window .w-def {
+  font-size: 13px;
+}
+
+#zhongwen-window .w-def-small {
+  font-size: 12px;
+}
+
+/* Zhuyin */
+#zhongwen-window .w-zhuyin {
+  font-family: PMingLiU, 'Apple LiGothic', sans-serif;
+  font-size: 13px;
+}
+
+#zhongwen-window .w-zhuyin-small {
+  font-family: PMingLiU, 'Apple LiGothic', sans-serif;
+  font-size: 11px;
+}
+
+/* Grammar / vocab prompts */
+#zhongwen-window .grammar,
+#zhongwen-window .vocab {
+  font-size: 11px;
+  color: #6e6e73;
+}
+
+/* Non-search message content (clipboard, word list confirm, help) */
+#zhongwen-window p {
+  display: block;
+  padding: 5px 14px;
+}
+
+#zhongwen-window table {
+  border-collapse: collapse;
+  margin: 6px 14px;
+  font-size: 12px;
+}
+
+#zhongwen-window td {
+  padding: 2px 6px;
+  vertical-align: top;
+}
+
+/* ── Tone colors ────────────────────────────────────────── */
+
+/* Standard */
+#zhongwen-window.tonecolor-standard .tone1 { color: #d93025; }
+#zhongwen-window.tonecolor-standard .tone2 { color: #e8711a; }
+#zhongwen-window.tonecolor-standard .tone3 { color: #1a7f37; }
+#zhongwen-window.tonecolor-standard .tone4 { color: #1a56db; }
+#zhongwen-window.tonecolor-standard .tone5 { color: #6e6e73; }
+
+/* Pleco */
+#zhongwen-window.tonecolor-pleco .tone1 { color: #e30000; }
+#zhongwen-window.tonecolor-pleco .tone2 { color: #02b31c; }
+#zhongwen-window.tonecolor-pleco .tone3 { color: #1510f0; }
+#zhongwen-window.tonecolor-pleco .tone4 { color: #8900bf; }
+#zhongwen-window.tonecolor-pleco .tone5 { color: #777777; }
+
+/* Hanping */
+#zhongwen-window.tonecolor-hanping .tone1 { color: #64b4ff; }
+#zhongwen-window.tonecolor-hanping .tone2 { color: #30b030; }
+#zhongwen-window.tonecolor-hanping .tone3 { color: #f08000; }
+#zhongwen-window.tonecolor-hanping .tone4 { color: #d00020; }
+#zhongwen-window.tonecolor-hanping .tone5 { color: #a0a0a0; }
+
+/* Background class overrides — distinct frosted tints per user choice */
+#zhongwen-window.background-white {
+  /* no override — default frosted glass from base rule */
+}
+
+#zhongwen-window.background-yellow {
+  background: rgba(255, 249, 219, 0.7);
+}
+
+#zhongwen-window.background-blue {
+  background: rgba(208, 226, 255, 0.7);
+}
+
+#zhongwen-window.background-lightblue {
+  background: rgba(226, 242, 255, 0.7);
+}
+
+#zhongwen-window.background-black {
+  background: rgba(28, 28, 30, 0.78);
+}
+
+/* Dark theme needs light text; tone-color selectors are more specific so
+   they still win for pinyin syllables. */
+#zhongwen-window.background-black,
+#zhongwen-window.background-black * {
+  color: #f5f5f7;
+}
+
+#zhongwen-window.background-black .zw-sep,
+#zhongwen-window.background-black .zw-entry-sep {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Classifier / measure word row */
+#zhongwen-window .zw-cl-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 3px 14px;
+}
+
+#zhongwen-window .zw-cl-label {
+  font-size: 10px;
+  color: #6e6e73;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+#zhongwen-window .zw-cl-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  padding: 2px 5px;
+  gap: 0;
+}
+
+#zhongwen-window .zw-cl-char {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+#zhongwen-window .zw-cl-pinyin {
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+#zhongwen-window.background-black .zw-cl-item {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Inline character references inside definitions e.g. 不(bù) */
+#zhongwen-window .zw-inline-py {
+  font-size: inherit;
+  color: inherit;
+  margin-left: 1px;
+}
