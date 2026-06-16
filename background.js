@@ -102,6 +102,13 @@ function applyStorageItems(items) {
     if (items.toneColorScheme !== undefined) zhongwenOptions.toneColorScheme = items.toneColorScheme;
 }
 
+// Enable by default on first install
+chrome.runtime.onInstalled.addListener((details) => {
+    if (details.reason === 'install') {
+        chrome.storage.local.set({ enabled: '1' });
+    }
+});
+
 // Restore state when service worker starts (or restarts)
 chrome.storage.local.get(
     ['enabled', 'popupcolor', 'tonecolors', 'fontSize', 'skritterTLD', 'zhuyin', 'grammar', 'vocab', 'simpTrad', 'toneColorScheme'],
@@ -110,8 +117,8 @@ chrome.storage.local.get(
         applyStorageItems(items);
 
         if (isEnabled) {
-            chrome.action.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
-            chrome.action.setBadgeText({ text: 'On' });
+            chrome.action.setBadgeBackgroundColor({ color: [128, 0, 200, 180] });
+            chrome.action.setBadgeText({ text: 'on' });
             chrome.contextMenus.removeAll(() => {
                 chrome.contextMenus.create({ id: 'wordlist', title: 'Open word list' });
                 chrome.contextMenus.create({ id: 'help', title: 'Show help in new tab' });
@@ -174,8 +181,8 @@ function activateExtension(tabId, showHelp) {
         });
     }
 
-    chrome.action.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
-    chrome.action.setBadgeText({ text: 'On' });
+    chrome.action.setBadgeBackgroundColor({ color: [128, 0, 200, 180] });
+    chrome.action.setBadgeText({ text: 'on' });
 
     chrome.contextMenus.removeAll(() => {
         chrome.contextMenus.create({ id: 'wordlist', title: 'Open word list' });
