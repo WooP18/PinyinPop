@@ -1,7 +1,6 @@
 # PinyinPop
 
-<img width="1024" height="1024" alt="Zhogwen Better UI logo" src="https://github.com/user-attachments/assets/a347d5a9-6c74-43e4-9ace-89b4317e9400" />
-
+<img width="48" height="48" alt="zhongwen48" src="https://github.com/user-attachments/assets/23e17e56-fa4e-43ab-aa40-acb7b2771cc1" />
 
 ## A Chinese Pop-Up Dictionary for Chrome and Firefox
 
@@ -36,6 +35,7 @@ Click the PinyinPop icon in your browser toolbar to enable the extension — the
 - Pinyin with tone colors
 - English definition(s)
 
+<img width="715" height="565" alt="Capture d&#39;écran 2026-06-16 210023" src="https://github.com/user-attachments/assets/bab17e16-d071-4c5d-b32a-6964c50204b9" />
 
 ## Tone Colors
 
