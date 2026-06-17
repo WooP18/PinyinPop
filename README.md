@@ -1,5 +1,8 @@
 # PinyinPop
 
+<img width="1024" height="1024" alt="Zhogwen Better UI logo" src="https://github.com/user-attachments/assets/a347d5a9-6c74-43e4-9ace-89b4317e9400" />
+
+
 ## A Chinese Pop-Up Dictionary for Chrome and Firefox
 
 **Made by [WooP18](https://github.com/WooP18)**
