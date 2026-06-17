@@ -1,8 +1,10 @@
-# PinyinPop
+<h1 align="center">PinyinPop</h1>
 
-<img width="48" height="48" alt="zhongwen48" src="https://github.com/user-attachments/assets/23e17e56-fa4e-43ab-aa40-acb7b2771cc1" />
+<p align="center">
+<img width="512" height="512" alt="PinyinPop - Logo 1024x1024 - Copy" src="https://github.com/user-attachments/assets/8ee6f512-a12c-4b50-8423-1852f7ca465d" />
+</p>
 
-## A Chinese Pop-Up Dictionary for Chrome and Firefox
+<h1 align="center"> A Chinese Pop-Up Dictionary for Chrome and Firefox</h1>
 
 **Made by [WooP18](https://github.com/WooP18)**
 
