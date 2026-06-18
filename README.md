@@ -1,7 +1,7 @@
 <h1 align="center">PinyinPop</h1>
 
 <p align="center">
-<img width="512" height="512" alt="PinyinPop logo-512" src="https://github.com/user-attachments/assets/0afd038d-dcbe-4496-ab26-3242c49c664e" />
+<img width="256" height="256" alt="PinyinPop logo-512" src="https://github.com/user-attachments/assets/0afd038d-dcbe-4496-ab26-3242c49c664e" />
 </p>
 
 <h1 align="center"> A Chinese Pop-Up Dictionary for Chrome and Firefox</h1>
