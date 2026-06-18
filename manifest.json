@@ -7,12 +7,12 @@
   "homepage_url": "https://github.com/cschiller/zhongwen",
   "description": "Hover over any Chinese character for instant pinyin, tone colors, and definitions. Save words, open Grammar Wiki, and export to Skritter — all without leaving the page.",
   "icons": {
-    "16": "images/zhongwen16.png",
-    "48": "images/zhongwen48.png",
-    "128": "images/zhongwen.png"
+    "16": "images/pinyinpop16.png",
+    "48": "images/pinyinpop48.png",
+    "128": "images/pinyinpop.png"
   },
   "action": {
-    "default_icon": "images/zhongwen48.png",
+    "default_icon": "images/pinyinpop48.png",
     "default_title": "PinyinPop — Click to enable"
   },
   "background": {

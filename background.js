@@ -107,7 +107,7 @@ async function updateActionIcon(active) {
     const canvas = new OffscreenCanvas(size, size);
     const ctx = canvas.getContext('2d');
 
-    const blob = await fetch(chrome.runtime.getURL('images/zhongwen48.png')).then(r => r.blob());
+    const blob = await fetch(chrome.runtime.getURL('images/pinyinpop48.png')).then(r => r.blob());
     const bitmap = await createImageBitmap(blob);
     ctx.drawImage(bitmap, 0, 0, size, size);
 
