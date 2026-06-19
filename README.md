@@ -1,7 +1,5 @@
-<h1 align="center">PinyinPop</h1>
-
 <p align="center">
-<img width="256" height="256" alt="PinyinPop logo-512" src="https://github.com/user-attachments/assets/0afd038d-dcbe-4496-ab26-3242c49c664e" />
+<img width="440" height="280" alt="PinyinPop_Promo_440x280" src="https://github.com/user-attachments/assets/337be870-d74b-4805-82c0-5210db09b9a1" />
 </p>
 
 <h1 align="center"> A Chinese Pop-Up Dictionary for Chrome and Firefox</h1>
@@ -10,8 +8,10 @@
 
 <a href='https://ko-fi.com/B8O521GOSZ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-Hover over any Chinese characters to instantly see pinyin, tone colors, and English definitions — without leaving the page.
-
+<p align="center">
+  <img width="49%" alt="PinyinPop_Promo_3" src="https://github.com/user-attachments/assets/f506e97a-da5a-4d6e-a706-33d0c6a05a32" />
+  <img width="49%" alt="PinyinPop_Promo_v2" src="https://github.com/user-attachments/assets/7787ddda-5429-4c01-bf68-3ef147f91d07" />
+</p>
 
 ---
 
@@ -37,7 +37,9 @@ Click the PinyinPop icon in your browser toolbar to enable the extension — the
 - Pinyin with tone colors
 - English definition(s)
 
+<p align="center">
 <img width="715" height="565" alt="Capture d&#39;écran 2026-06-16 210023" src="https://github.com/user-attachments/assets/bab17e16-d071-4c5d-b32a-6964c50204b9" />
+</p>
 
 ## Tone Colors
 
