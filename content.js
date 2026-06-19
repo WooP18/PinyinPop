@@ -58,6 +58,8 @@ let savedRangeOffset;
 
 let selText;
 
+let highlightSpan;
+
 let clientX;
 
 let clientY;
@@ -781,23 +783,41 @@ function highlightMatch(doc, rangeStartNode, rangeStartOffset, matchLen, selEndL
         offset -= selEnd.offset;
     }
 
+    clearHighlight();
+
     let range = doc.createRange();
     range.setStart(rangeStartNode, rangeStartOffset);
     range.setEnd(selEnd.node, offset);
 
-    let sel = window.getSelection();
-    if (!sel.isCollapsed && selText !== sel.toString())
-        return;
-    sel.empty();
-    sel.addRange(range);
-    selText = sel.toString();
+    try {
+        let span = doc.createElement('span');
+        span.className = 'pp-highlight';
+        range.surroundContents(span);
+        highlightSpan = span;
+        selText = span.textContent;
+    } catch (e) {
+        // Range crosses element boundaries — fall back to native selection
+        let sel = window.getSelection();
+        if (!sel.isCollapsed && selText !== sel.toString()) return;
+        sel.empty();
+        sel.addRange(range);
+        selText = sel.toString();
+    }
 }
 
 function clearHighlight() {
-
-    if (selText === null) {
-        return;
+    if (highlightSpan) {
+        let parent = highlightSpan.parentNode;
+        if (parent) {
+            while (highlightSpan.firstChild) {
+                parent.insertBefore(highlightSpan.firstChild, highlightSpan);
+            }
+            parent.removeChild(highlightSpan);
+        }
+        highlightSpan = null;
     }
+
+    if (selText === null) return;
 
     let selection = window.getSelection();
     if (selection.isCollapsed || selText === selection.toString()) {
