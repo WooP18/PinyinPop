@@ -4,7 +4,7 @@
   "short_name": "PinyinPop",
   "version": "1.0.0",
   "author": "Rémi Gérard",
-  "homepage_url": "https://github.com/cschiller/zhongwen",
+  "homepage_url": "https://github.com/WooP18/PinyinPop",
   "description": "Hover over any Chinese character for instant pinyin, tone colors, and definitions. Save words, open Grammar Wiki, and export to Skritter — all without leaving the page.",
   "icons": {
     "16": "images/pinyinpop16.png",
