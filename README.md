@@ -13,7 +13,17 @@
   <img width="49%" alt="PinyinPop_Promo_v2" src="https://github.com/user-attachments/assets/7787ddda-5429-4c01-bf68-3ef147f91d07" />
 </p>
 
----
+## Get the extension  :
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/pinyinpop-instant-chinese/hhejphodgaiodeogkbdbecnnemdjecae?hl=fr&authuser=0">
+    <img src="https://developer.chrome.com/static/docs/webstore/branding/image/HRs9MPufa1J1h5glNhut.png" alt="Available in the Chrome Web Store" height="58"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://addons.mozilla.org/fr/firefox/addon/pinyinpop/">
+    <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="Get the add-on" height="58"/>
+  </a>
+</p>
 
 ## Highlights
 
